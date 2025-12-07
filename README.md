@@ -11,9 +11,9 @@ El coste de la votación será el de las comisiones para las transacciones ya qu
 dejando como actas de resultados las inscripciones en la cadena de bloques. Su correlación con las preguntas y respuestas es el resultado arrojado. 
 Solo realizaremos una pregunta por ejecución del programa, con múltiples respuestas posibles y múltiples votantes únicos. La regla es de un voto por persona.
 
-1.- Primero vamos a la carpeta donde esta el programa, en este caso:
+1.- Primero vamos a la carpeta donde esta el programa, por ejemplo:
 
-cd /home/usuario/Descargas/feathercoin-0.19.1-linux64/
+cd /home/usuario/votacionFTC_001/
 
 
 Necesitaras dos terminales si quieres ver la información del nodo corriendo. 
