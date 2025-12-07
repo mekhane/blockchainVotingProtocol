@@ -1,6 +1,7 @@
 Implementing a Voting System on the Feathercoin (FTC) Blockchain
 
-This development is based on the paper published on this blog titled "Blockchain Voting Strategy." Please refer to this document for more information on this idea: https://habican.blogspot.com/2015/07/estrategia-de-voto-en-la-cadena-de.html For a demonstration example, visit https://habican.blogspot.com/2015/07/blochain-voting-strategy-can-you-trust.html
+This development is based on the paper published on this blog titled "Blockchain Voting Strategy." Please refer to this document for more information on this idea: https://habican.blogspot.com/2015/07/blochain-voting-strategy-can-you-trust.html
+For a demonstration example, visit: https://habican.blogspot.com/2025/11/implentacion-de-voto-sobre-cadena-de.html 
 
 Download the necessary software from https://github.com/FeatherCoin/Feathercoin/releases/tag/v0.19.1.1 and place it in the same folder as our files. Install the required dependencies if you don't already have them installed.
 
