@@ -66,3 +66,5 @@ incluyendo los datos de la votación, las opciones, y los resultados, junto a un
 
 Todo este trabajo esta publicado bajo licencia Creative Commons y su caracter es puramente educativo y experimental. 
 Programado con asistencia de google gemini. Noviembre 2025. 
+
+warning: feathercoind & feathercoin-cli best download them from original repo:   https://github.com/feathercoin/feathercoin/releases
