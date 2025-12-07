@@ -2,10 +2,14 @@ Implentación de voto sobre cadena de bloques de criptomoneda Feathercoin (FTC)
 
 Este desarrollo esta basado en el papel publicado en este blog denominado "Estrategia de voto en cadena de Bloques"  
 Ruego consulte este documento para mas información sobre esta idea: https://habican.blogspot.com/2015/07/estrategia-de-voto-en-la-cadena-de.html
+Para ver el ejemplo demostración visita https://habican.blogspot.com/2025/11/implentacion-de-voto-sobre-cadena-de.html
 
+
+Descarga el software necesario en https://github.com/FeatherCoin/Feathercoin/releases/tag/v0.19.1.1 
+y ponlo en la misma carpeta que nuestros archivos. Instala las dependencias requeridas si no las tienes ya instaladas.
 
 0.- Lo primero es crear una cartera para la votación. En feathercoin-qt, la interfaz gráfica core de esta criptomoneda encontraras muy sencillo hacerlo. 
-El nombre de esta cartera es -en nuestro ejemplo-  votingWallet, y necesitaras disponer de fondos necesarios para enviar las transacciones.  
+El nombre de esta cartera es -en nuestro ejemplo-  "votingWallet", y necesitaras disponer de fondos necesarios para enviar las transacciones.  
 Encripta la cartera si quieres prevenir que se vacie si alguien o algo accediera a tu archivo local .dat en tu ordenador.
 El coste de la votación será el de las comisiones para las transacciones ya que los fondos se recuperan en la cartera una vez finalizada la votación, 
 dejando como actas de resultados las inscripciones en la cadena de bloques. Su correlación con las preguntas y respuestas es el resultado arrojado. 
@@ -67,4 +71,4 @@ incluyendo los datos de la votación, las opciones, y los resultados, junto a un
 Todo este trabajo esta publicado bajo licencia Creative Commons y su caracter es puramente educativo y experimental. 
 Programado con asistencia de google gemini. Noviembre 2025. 
 
-warning: feathercoind & feathercoin-cli best download them from original repo:   https://github.com/feathercoin/feathercoin/releases
+
