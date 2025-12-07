@@ -1,0 +1,52 @@
+
+0.- Lo primero es crear una cartera para la votacion. En feathercoin-qt, la interfaz gráfica core de esta criptomoneda encontraras muy sencillo hacerlo. El nombre de esta cartera es votingWallet, y necesitaras disponer de fondos necesarios para enviar las transacciones.  Encripta la cartera si quieres prevenir que se vacie si alguien accediera a tu archivo local .dat de forma remota en tu ordenador.
+
+El coste de la votación será el de las comisiones para las transacciones ya que los fondos se recuperan en la cartera una vez finalizada la votación, dejando como actas de resultados las inscripciones en la cadena de bloques. Su correlación con las preguntas y respuestas es el resultado arrojado. Solo realizaremos una pregunta por ejecución del programa, con multiples respuestas posibles y multiples votantes únicos. La regla es de un voto por persona.
+
+1.- primero vamos a la carpeta dende esta el programa, en este caso:
+
+/home/anth3n/Descargas/feathercoin-0.19.1-linux64/VP_old02
+
+
+necsitaras dos terminales si quieres ver la informacion del nodo corriendo.
+
+ls
+
+feathercoin-cli  generate_graphs.py  vote_protocol.sh
+feathercoind     unlock_wallet.py
+
+2.- Ahora arrancamos un nodeo de Feathercoin en una de las terminales que indexe las transacciones en la piscina de memoria mediante el commando
+
+./feathercoind -txindex=1
+
+y cargamos nustro monedero:
+
+
+./feathercoin-cli loadwallet "votingWallet"
+
+
+en la consola del nodo podras ver pasar la informacion de como se añade la cartera.
+
+Ahora debemos esperar a que nustro nodo este sincroniazdo. Si es la primera vez que arrancas el nodo deberemos esperar mucho hasta que se sincronize.
+Aunque existe una opcion para el recuento aun no teniendo las suficientes confirmaciones es posible que no funcione si el nodo no esta sincronizado.
+
+Ya tenemos todo listo para comenzar. Ahora vamos a correr un script de python que permite desbloquera tu cartera dusrante el tiempo que especifiques, en el caso por defecto son 10 minutos.
+
+python3 unlock_wallet.py
+
+pon tu contraseña elegida para la cartera y comenzamos. tirando el siguiente script que incia el protocolo de votacion. ¡Que comienza la votación!
+
+./vote_protocol.sh
+
+
+Ahora debemos introducir la pregunta, las respuestas posibles (entrecomilladas si incluyen espacios en blanco) y el número de votantes. Si se preveen votos no validos es conveniente establecer aqui también esa última opción.
+
+Ahora esperamos algo mas de un minuto a que se propagen las transacciones con la información necesaria para el desarrollo de la consulta. En este momento se ponen fondos para que cada dirección pueda ejercer su voto, y se preparan las direcciones que representan las respuestas a la pregunta.
+
+Una vez transcurrida la espera comienza la votación. Ahora deben votar por turno las personas. Si es preciso se deben establecer papeletas fisicas en una urna y posteriormente se resliza el volcado de la consulta analógica en la cadena de bloques.
+
+Realizada la votación, ahora esperamos a la confirmación de las transacciones. La velocidad de esta confirmación varía en funcion de la red y del nodo. Transcurridos 300 segundos se nos preguntará si queremos continuar aún sin las tres confirmaciones, a lo que podemos responder que sí pues rara vez son canceladas una vez la primera confirmacion entra. Una vez terminada esta confirmación comienfa el recuento y se generan los resultados en un archivo RESULTS.md
+
+Ademas encontraremos generados un padron electoral con las direcciones empleadas para votar voters_ids.txt y archivos .json los datos de la votación, las opciones y los resultados, junto a un archivo gráfico generado .png con el número de votos por opción.
+
+
