@@ -1,3 +1,58 @@
+Implementing a Voting System on the Feathercoin (FTC) Blockchain
+
+This development is based on the paper published on this blog titled "Blockchain Voting Strategy." Please refer to this document for more information on this idea: https://habican.blogspot.com/2015/07/estrategia-de-voto-en-la-cadena-de.html For a demonstration example, visit https://habican.blogspot.com/2025/11/implentacion-de-voto-sobre-cadena-de.html
+
+Download the necessary software from https://github.com/FeatherCoin/Feathercoin/releases/tag/v0.19.1.1 and place it in the same folder as our files. Install the required dependencies if you don't already have them installed.
+
+0. The first step is to create a wallet for voting. You'll find it very easy to do this in feathercoin-qt, the core graphical interface for this cryptocurrency.
+
+The name of this wallet—in our example—is "votingWallet," and you will need to have sufficient funds to send the transactions. Encrypt the wallet if you want to prevent it from being emptied if someone or something were to access your local .dat file on your computer. The cost of voting will be the transaction fees, as the funds are returned to the wallet once the voting is complete, leaving the entries on the blockchain as the official record of the results. The correlation between the questions and answers is the result displayed.
+
+We will only ask one question per program run, with multiple possible answers and multiple unique voters. The rule is one vote per person.
+
+1. Go to the folder where the program is located, for example:
+
+cd /home/username/votingFTC/
+
+You will need two terminals if you want to view the information of the running node. The contents, along with the program to start the Feathercoin node, include the following files:
+
+generate_graphs.py, vote_protocol.sh, and unlock_wallet.py
+
+Download these files here, and the necessary files from the repository linked above. Place them in the same folder.
+
+2. Now, start a Feathercoin node in one of the terminals that indexes transactions in the memory pool using the command:
+
+./feathercoind -txindex=1
+
+and load your wallet:
+
+./feathercoin-cli loadwallet "votingWallet"
+
+Now we must wait for our node to synchronize. If this is the first time you are starting the node, you will have to wait a long time.
+
+We are now ready to begin once the node is synchronized. Now we will run a Python script that allows you to unlock your wallet for the time you specify; the default is 10 minutes.
+
+python3 unlock_wallet.py
+
+Enter your chosen wallet password and we'll run the following script to start the protocol. Let the voting begin!
+
+./vote_protocol.sh
+
+Now we need to enter the question, the possible answers (in quotes if they include spaces), and the number of voters. If invalid votes are anticipated, it's advisable to specify that option here as well.
+
+Now we wait a little over a minute for the transactions with the necessary information for the consultation to propagate. At this point, funds are allocated so that each address can cast its vote, and the addresses representing the answers to the question are prepared.
+
+Once the wait is over, the voting begins. Now people must vote in turn. If necessary, physical ballots should be placed in a ballot box, and then the analog consultation is uploaded to the blockchain.
+
+After the voting is complete, we wait for the transaction confirmations. The speed of this confirmation varies depending on the network and the node. After 300 seconds, we will be asked if we want to continue even without the three confirmations, to which we can answer yes, as they are rarely canceled once the first confirmation is received.
+
+Once this confirmation is complete, the count begins and the results are generated in a file called RESULTS.md.
+
+In addition, we will find in the application folder an electoral roll with the addresses used to vote (voters_ids.txt) and .json files containing the voting data, options, and results, along with a generated .png graphic file showing the number of votes per option.
+
+All of this work is published under a Creative Commons license and is purely educational and experimental. Programmed with assistance from Google Gemini. November 2025.
+______________________________________________________________________________________________________________________
+
 Implentación de voto sobre cadena de bloques de criptomoneda Feathercoin (FTC)
 
 Este desarrollo esta basado en el papel publicado en este blog denominado "Estrategia de voto en cadena de Bloques"  
