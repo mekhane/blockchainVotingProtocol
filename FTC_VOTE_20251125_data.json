@@ -1,0 +1,9 @@
+{
+  "creation_time": "$(date -u +%Y-%m-%dT%H:%M:%S)Z",
+  "required_amount": 1.00,
+  "option_addresses": {
+    "OPT1": "3CwwnkVnVJzWSAv1GRPtbqmRHgSquznTNP",
+    "OPT2": "3FrpzqVZUN7sTFzq4Ks1SdYozTW5qzo5D2",
+    "OPT3": "3Nybh5pBFUBaDpQWSmxqZM32spekgLKBJL"
+  }
+}
